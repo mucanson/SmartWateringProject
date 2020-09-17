@@ -1,18 +1,19 @@
-#include <Arduino_JSON.h>
+#include <ArduinoJson.h>
+//#include <Arduino_JSON.h>
 
-#include <FirebaseESP8266.h>
+//#include <FirebaseESP8266.h>
 //#include <FirebaseFS.h>
 //#include <FirebaseJson.h>
 
 #include <ESP8266WiFi.h>
-//#include <FirebaseArduino.h>
+#include <FirebaseArduino.h>
 #define TRIG_PIN 4
 #define ECHO_PIN 5
 #define FIREBASE_HOST "iot-smart-watering.firebaseio.com"
 #define FIREBASE_AUTH ""  
 #define WIFI_SSID "UIT Public"
 #define WIFI_PASSWORD ""
-FirebaseData firebase;
+//FirebaseData firebase;
 long duration;
 float distance;
 void setup() {
@@ -39,7 +40,7 @@ void loop() {
   Serial.print("Khoảng cách mực nước: ");
   Serial.print(distance);
   Serial.println(" cm");
-  firebase.pulseIn(FirebaseData,"/Khoảng cách",distance);
+  Firebase.pushFloat("/Khoảng cách",distance);
 
   delay(500);
   
