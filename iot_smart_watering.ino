@@ -54,7 +54,7 @@ void loop() {
    if (isnan(h))
        h=-1;
    Serial.println(""); Serial.print("Temperature: "); Serial.println(t); Serial.print("Humidity: "); Serial.println(h);
-   Firebase.getFloat(firebaseData,"/Humidity", h);          
-   Firebase.getFloat(firebaseData,"/Temperature", t);
+   Firebase.pushFloat(firebaseData,"/Humidity", h);          
+   Firebase.pushFloat(firebaseData,"/Temperature", t);
 
 }
