@@ -1,2 +1,3 @@
 # SmartWateringProject
-hello
+
+It's me Zerny Boi
